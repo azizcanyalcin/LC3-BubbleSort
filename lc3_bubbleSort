@@ -1,7 +1,7 @@
         .ORIG x3000
 START   LEA R0, ARRAY
         LD R1, ARRAY_SIZE
-        DEC R1
+        ADD R1, R1, #-1
 OUTER_LOOP
         LEA R2, ARRAY
         ADD R3, R1, #0
@@ -27,7 +27,7 @@ NO_SWAP
         ADD R3, R4, #0
         BRz SORT_DONE
 
-        DEC R1
+        ADD R1, R1, #-1
         BRp OUTER_LOOP
 
 SORT_DONE
